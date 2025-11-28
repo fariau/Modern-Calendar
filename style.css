@@ -122,6 +122,14 @@ body {
   box-shadow: 0 8px 25px rgba(79, 70, 229, 0.5);
 }
 
+/*footer */
+.calendar-footer {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 500;
+}
 
 /* Prev/Next dimmed */
 .calendar-days .prev-month,
