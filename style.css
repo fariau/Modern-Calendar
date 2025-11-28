@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f3f6fb, #e9eef5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container */
+.calendar-container {
+  width: 100%;
+  max-width: 850px;
+  padding: 20px;
+}
+
+/* Main Card */
+.calendar {
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+/* Header */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 26px;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: #fff;
+}
+
+.month-year {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+/* Weekdays */
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  background: #f8f9fd;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  padding: 14px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+/* Days grid */
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  padding: 16px;
+  background: #f4f7fb;
+}
+
+.calendar-days div {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+}
+
+/* Hover effect */
+.calendar-days div:hover:not(.today):not(.empty) {
+  background-color: #e9eef5;   
+  color: #333;                 
+  box-shadow: none;      
+}
+
+/* Today */
+.calendar-days .today {
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(75, 108, 183, 0.45);
+}
+
+/* Clicked/Selected date */
+.calendar-days .selected {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.5);
+}
+
+
+/* Prev/Next dimmed */
+.calendar-days .prev-month,
+.calendar-days .next-month {
+  color: #b5b5b5;
+  background: #fafafa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .calendar-container {
+    max-width: 95%;
+  }
+  .calendar-days {
+    gap: 8px;
+  }
+  .calendar-days div {
+    font-size: 0.85rem;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-header {
+    padding: 18px;
+  }
+  .month-year {
+    font-size: 1.3rem;
+  }
+}
